@@ -1,0 +1,592 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+a,
+button,
+.btn{
+    cursor:none;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+
+    cursor:none;
+
+    font-family:
+        Inter,
+        system-ui,
+        sans-serif;
+
+    background:linear-gradient(
+        -45deg,
+        #0f172a,
+        #1e293b,
+        #312e81,
+        #0f172a
+    );
+
+    background-size:400% 400%;
+
+    animation:bgMove 15s ease infinite;
+}
+
+/* Ambient Light */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,0,128,.20),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(0,255,255,.15),
+            transparent 40%
+        );
+
+    pointer-events:none;
+}
+
+/* Main Scene */
+
+.scene{
+    position:relative;
+    width:700px;
+    height:700px;
+
+    animation:hueRotate 20s linear infinite;
+}
+
+/* Blob Wrappers */
+
+.blob-wrap{
+    position:absolute;
+    inset:0;
+}
+
+/* Blobs */
+
+.blob{
+    position:absolute;
+
+    border-radius:50%;
+    filter:blur(10px);
+
+    box-shadow:
+        0 0 50px rgba(255,255,255,.10),
+        0 0 120px rgba(255,255,255,.15);
+}
+
+.blob-1{
+    width:420px;
+    height:420px;
+
+    left:120px;
+    top:120px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff6ec4,
+            #7873f5
+        );
+
+    animation:
+        morph1 12s ease-in-out infinite,
+        float1 8s ease-in-out infinite;
+}
+
+.blob-2{
+    width:260px;
+    height:260px;
+
+    left:20px;
+    top:40px;
+
+    opacity:.75;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00f5d4,
+            #00bbf9
+        );
+
+    animation:
+        morph2 9s ease-in-out infinite,
+        float2 7s ease-in-out infinite;
+}
+
+.blob-3{
+    width:320px;
+    height:320px;
+
+    right:20px;
+    bottom:20px;
+
+    opacity:.7;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fee140,
+            #fa709a
+        );
+
+    animation:
+        morph3 14s ease-in-out infinite,
+        float3 10s ease-in-out infinite;
+}
+
+/* Glass Card */
+
+.glass-card{
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:340px;
+
+    padding:35px;
+
+    text-align:center;
+
+    color:white;
+
+    border-radius:28px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    z-index:20;
+}
+
+.avatar{
+    width:90px;
+    height:90px;
+
+    margin:0 auto 20px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    font-size:1.8rem;
+    font-weight:700;
+
+    color:white;
+
+    background:
+        rgba(255,255,255,.12);
+
+    border:
+        1px solid rgba(255,255,255,.2);
+
+    box-shadow:
+        0 0 25px rgba(255,255,255,.15);
+}
+
+.glass-card h1{
+    font-size:2rem;
+    margin-bottom:10px;
+}
+
+.glass-card h2{
+    display:inline-block;
+
+    padding:8px 16px;
+
+    margin-bottom:22px;
+
+    font-size:.85rem;
+    font-weight:600;
+
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,110,196,.18),
+            rgba(120,115,245,.18)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    border-radius:999px;
+
+    box-shadow:
+        0 0 20px rgba(255,110,196,.15);
+}
+.glass-card h2::after{
+    content:"";
+
+    display:block;
+
+    width:60%;
+    height:2px;
+
+    margin:8px auto 0;
+
+    border-radius:999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff6ec4,
+            #7873f5
+        );
+}
+
+.glass-card p{
+    line-height:1.7;
+    opacity:.85;
+    margin-bottom:25px;
+}
+
+.skills{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+
+    margin-bottom:25px;
+}
+
+.skills span{
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    font-size:.85rem;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+}
+
+.btn{
+    text-decoration:none;
+    color:white;
+
+    padding:12px 18px;
+
+    border-radius:12px;
+
+    transition:.4s;
+}
+
+.btn:hover{
+    transform:
+        translateY(-3px)
+        scale(1.05);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,110,196,.25),
+            rgba(120,115,245,.25)
+        );
+
+    box-shadow:
+        0 0 25px rgba(255,110,196,.5),
+        0 0 60px rgba(255,110,196,.4),
+        0 0 120px rgba(120,115,245,.3);
+}
+
+.primary{
+    background:
+        rgba(255,255,255,.15);
+}
+
+.secondary{
+    border:
+        1px solid rgba(255,255,255,.15);
+}
+
+/* Ripple */
+
+.ripple{
+    position:fixed;
+
+    width:20px;
+    height:20px;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    transform:translate(-50%, -50%);
+
+    animation:rippleEffect 1s ease-out forwards;
+}
+
+@keyframes rippleEffect{
+
+    0%{
+        width:20px;
+        height:20px;
+        opacity:1;
+    }
+
+    100%{
+        width:500px;
+        height:500px;
+        opacity:0;
+    }
+}
+
+/* Cursor */
+
+.cursor{
+    position:fixed;
+
+    width:20px;
+    height:20px;
+
+    border-radius:50%;
+
+    background:white;
+
+    pointer-events:none;
+
+    transform:translate(-50%,-50%);
+
+    z-index:9999;
+
+    box-shadow:
+        0 0 20px white,
+        0 0 40px white,
+        0 0 80px white;
+
+    transition:
+        width .25s ease,
+        height .25s ease,
+        background .25s ease,
+        box-shadow .25s ease,
+        left .05s linear,
+        top .05s linear;
+}
+/* Background Animation */
+
+@keyframes bgMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* Hue Rotation */
+
+@keyframes hueRotate{
+
+    from{
+        filter:hue-rotate(0deg);
+    }
+
+    to{
+        filter:hue-rotate(360deg);
+    }
+}
+
+/* Morph Animations */
+
+@keyframes morph1{
+
+    0%,100%{
+        border-radius:
+        42% 58% 70% 30% /
+        45% 45% 55% 55%;
+    }
+
+    20%{
+        border-radius:
+        65% 35% 55% 45% /
+        30% 60% 40% 70%;
+    }
+
+    40%{
+        border-radius:
+        30% 70% 40% 60% /
+        70% 30% 60% 40%;
+    }
+
+    60%{
+        border-radius:
+        75% 25% 35% 65% /
+        55% 35% 65% 45%;
+    }
+
+    80%{
+        border-radius:
+        50% 50% 20% 80% /
+        25% 75% 30% 70%;
+    }
+}
+
+@keyframes morph2{
+
+    0%,100%{
+        border-radius:
+        60% 40% 30% 70% /
+        40% 70% 30% 60%;
+    }
+
+    25%{
+        border-radius:
+        35% 65% 70% 30% /
+        70% 30% 60% 40%;
+    }
+
+    50%{
+        border-radius:
+        80% 20% 50% 50% /
+        20% 80% 30% 70%;
+    }
+
+    75%{
+        border-radius:
+        45% 55% 25% 75% /
+        65% 35% 75% 25%;
+    }
+}
+
+@keyframes morph3{
+
+    0%,100%{
+        border-radius:
+        70% 30% 50% 50% /
+        30% 60% 40% 70%;
+    }
+
+    33%{
+        border-radius:
+        25% 75% 60% 40% /
+        55% 45% 70% 30%;
+    }
+
+    66%{
+        border-radius:
+        60% 40% 80% 20% /
+        20% 80% 25% 75%;
+    }
+}
+
+/* Floating */
+
+@keyframes float1{
+
+    0%,100%{
+        transform:
+        translate(0,0)
+        scale(1);
+    }
+
+    50%{
+        transform:
+        translate(-30px,-40px)
+        scale(1.1);
+    }
+}
+
+@keyframes float2{
+
+    0%,100%{
+        transform:
+        translate(0,0)
+        scale(1);
+    }
+
+    50%{
+        transform:
+        translate(40px,20px)
+        scale(.9);
+    }
+}
+
+@keyframes float3{
+
+    0%,100%{
+        transform:
+        translate(0,0)
+        scale(1);
+    }
+
+    50%{
+        transform:
+        translate(-35px,30px)
+        scale(1.15);
+    }
+}
+
+/* Responsive */
+
+@media (max-width:768px){
+
+    .scene{
+        width:100vw;
+        height:100vh;
+    }
+
+    .glass-card{
+        width:90%;
+        max-width:340px;
+    }
+
+    .blob-1{
+        width:300px;
+        height:300px;
+    }
+
+    .blob-2{
+        width:180px;
+        height:180px;
+    }
+
+    .blob-3{
+        width:220px;
+        height:220px;
+    }
+}
