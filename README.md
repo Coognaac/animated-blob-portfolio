@@ -1,4 +1,4 @@
-# Interactive Portfolio
+# Animated Blob Portfolio
 
 A modern personal landing page featuring:
 
