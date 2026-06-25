@@ -1,12 +1,14 @@
 # Animated Blob Portfolio
 
-A modern personal landing page featuring:
+An interactive personal portfolio featuring morphing blobs, glassmorphism UI, ripple effects and custom cursor animations.
 
-- Morphing Blob Animation
-- Glassmorphism UI
-- Interactive Ripple Effect
-- Custom Glow Cursor
-- Responsive Design
+## Preview
+
+![Portfolio Preview](assets/Screenshot.png)
+
+## Live Demo
+
+https://coognaac.github.io/animated-blob-portfolio/
 
 ## Technologies
 
@@ -14,6 +16,11 @@ A modern personal landing page featuring:
 - CSS3
 - JavaScript
 
-## Live Demo
+## Features
 
-[View Live Demo](https://coognaac.github.io/animated-blob-portfolio/)
+- Morphing Blob Animation
+- Glassmorphism Card
+- Custom Glow Cursor
+- Ripple Click Effect
+- Responsive Design
+- Interactive Hover Effects
