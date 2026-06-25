@@ -16,4 +16,4 @@ A modern personal landing page featuring:
 
 ## Live Demo
 
-Coming Soon...
+[View Live Demo](https://coognaac.github.io/animated-blob-portfolio/)
